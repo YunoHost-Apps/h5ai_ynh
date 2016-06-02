@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Exit on command errors and treat unset variables as an error
+set -eu
+
+# Define app
+app=h5ai
+version=0.28.1
+md5_source=d99b2d43102e23f52eb0c645a5a3b3dc
+
+# Retrieve arguments
+domain=$YNH_APP_ARG_DOMAIN
+path=$YNH_APP_ARG_PATH
+
+# Source YunoHost helpers
+. /usr/share/yunohost/helpers
+
+# Save app settings
+ynh_app_setting_set "$app" domain "$domain"
+ynh_app_setting_set "$app" path "$path"
+
+# Check domain/path availability
+sudo yunohost app checkurl "${domain}${path}" -a "$app" \
+    || ynh_die "Path not available: ${domain}${path}"
+
+# Download source, check md5, untar, copy it
+sudo wget -q https://release.larsjung.de/h5ai/h5ai-$version.zip -O /tmp/h5ai.zip
+
+# Check md5
+md5_check=($(md5sum /tmp/hai.zip))
+if [ $md5_source != $md5_check ]
+then
+        ynh_die "the download is corrupted (md5 different)"
+fi
+
+# unzip and copy it
+sudo unzip -o /tmp/h5ai.zip -d /tmp/
+final_path=/var/www/$path
+sudo mkdir -p $final_path
+sudo cp -a /tmp/_h5ai/. $final_path
+
+# Set permissions to phpsysinfo directory
+sudo chown -R www-data: $final_path
+
+# Modify Nginx configuration file and copy it to Nginx conf directory
+sed -i "s@YNH_WWW_PATH@$path@g" ../conf/nginx.conf
+sed -i "s@YNH_WWW_ALIAS@$final_path/@g" ../conf/nginx.conf
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/$app.conf
+
+# unprotected_uris allows SSO credentials to be passed anyway.
+ ynh_app_setting_set "$app" unprotected_uris "/"
+
+# Restart services
+sudo service nginx reload

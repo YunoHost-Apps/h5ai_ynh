@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Define app
+app=h5ai
+
+# Source YunoHost helpers
+. /usr/share/yunohost/helpers
+
+# Retrieve app settings
+domain=$(ynh_app_setting_get "$app" domain)
+path=$(ynh_app_setting_get "$app" path)
+
+# Remove sources
+sudo rm -rf /var/www/$path
+
+# Remove configuration files
+sudo rm -f /etc/nginx/conf.d/$domain.d/$app.conf
+
+# Restart services
+sudo service nginx reload
