@@ -27,7 +27,7 @@ sudo yunohost app checkurl "${domain}${path}" -a "$app" \
 sudo wget -q https://release.larsjung.de/h5ai/h5ai-$version.zip -O /tmp/h5ai.zip
 
 # Check md5
-md5_check=($(md5sum /tmp/hai.zip))
+md5_check=($(md5sum /tmp/h5ai.zip))
 if [ $md5_source != $md5_check ]
 then
         ynh_die "the download is corrupted (md5 different)"
