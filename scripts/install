@@ -5,8 +5,8 @@ set -eu
 
 # Define app
 app=h5ai
-version=0.28.1
-md5_source=d99b2d43102e23f52eb0c645a5a3b3dc
+version=0.29.0
+md5_source=dd44880a4353bec140ded7fdec0ac3ce
 
 # Retrieve arguments
 domain=$YNH_APP_ARG_DOMAIN
