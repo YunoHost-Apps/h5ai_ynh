@@ -1,20 +1,31 @@
 #!/bin/bash
 
-# Define app
-app=h5ai
+#=================================================
+# GENERIC STARTING
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
 
-# Source YunoHost helpers
-. /usr/share/yunohost/helpers
+source /usr/share/yunohost/helpers
 
-# Retrieve app settings
-domain=$(ynh_app_setting_get "$app" domain)
-path=$(ynh_app_setting_get "$app" path)
+#=================================================
+# LOAD SETTINGS
+#=================================================
+
+readonly app=$YNH_APP_INSTANCE_NAME
+readonly domain=$(ynh_app_setting_get "$app" domain)
+readonly final_path=$(ynh_app_setting_get "$app" final_path)
+
+#=================================================
+# REMOVE THE MAIN DIR OF THE APP
+#=================================================
 
 # Remove sources
-sudo rm -rf /var/www/$path
+ynh_secure_remove "$final_path"
 
-# Remove configuration files
-sudo rm -f /etc/nginx/conf.d/$domain.d/$app.conf
+#=================================================
+# REMOVE THE NGINX CONFIGURATION
+#=================================================
 
-# Restart services
-sudo service nginx reload
+ynh_remove_nginx_config
+systemctl reload nginx

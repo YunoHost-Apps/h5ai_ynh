@@ -1,0 +1,6 @@
+SOURCE_URL=https://release.larsjung.de/h5ai/h5ai-0.29.0.zip
+SOURCE_SUM=508324f14df32bfa79096b8c272dd644cbd8ff97d0dbc7dde2eec6ce7d95104e
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=h5ai-0.29.0.zip

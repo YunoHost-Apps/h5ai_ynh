@@ -2,6 +2,7 @@
     "name": "H5AI",
     "id": "h5ai",
     "packaging_format": 1,
+    "version": "0.29.0~ynh1",
     "description": {
         "en": "A modern HTTP web server index for Nginx.",
         "fr": "Un serveur moderne d'index pour Nginx."
@@ -9,11 +10,11 @@
     "url": "https://larsjung.de/h5ai/",
     "license": "free",
     "maintainer": {
-        "name": "inrepublica",
-        "email": "duvalmickael@gmail.com"
+        "name": "alexAubin",
+        "email": "alex.aubin@mailoo.org"
     },
     "requirements": {
-        "yunohost": ">= 2.4.0.6"
+        "yunohost": ">= 3.0.0"
     },
     "multi_instance": false,
     "services": [
@@ -38,8 +39,17 @@
                     "en": "Choose a path for H5AI",
                     "fr": "Choisissez un chemin pour H5AI"
                 },
-                "example": "/_h5ai",
-                "default": "/_h5ai"
+                "example": "/documents",
+                "default": "/documents"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public application?",
+                    "fr": "Est-ce une application publique ?"
+                },
+                "default": true
             }
         ]
     }

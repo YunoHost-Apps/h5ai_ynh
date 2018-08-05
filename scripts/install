@@ -1,54 +1,80 @@
 #!/bin/bash
 
-# Exit on command errors and treat unset variables as an error
-set -eu
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
 
-# Define app
-app=h5ai
-version=0.29.0
-md5_source=dd44880a4353bec140ded7fdec0ac3ce
+source /usr/share/yunohost/helpers
 
-# Retrieve arguments
+#=================================================
+# MANAGE SCRIPT FAILURE
+#=================================================
+
+# Exit if an error occurs during the execution of the script
+ynh_abort_if_errors
+
+#=================================================
+# RETRIEVE ARGUMENTS FROM THE MANIFEST
+#=================================================
+
 domain=$YNH_APP_ARG_DOMAIN
-path=$YNH_APP_ARG_PATH
+path_url=$YNH_APP_ARG_PATH
+is_public=$YNH_APP_ARG_IS_PUBLIC
 
-# Source YunoHost helpers
-. /usr/share/yunohost/helpers
+app=$YNH_APP_INSTANCE_NAME
 
-# Save app settings
-ynh_app_setting_set "$app" domain "$domain"
-ynh_app_setting_set "$app" path "$path"
+final_path=/var/www/$path_url # so e.g. if path_url is /docs, we put stuff in /var/www/docs
 
-# Check domain/path availability
-sudo yunohost app checkurl "${domain}${path}" -a "$app" \
-    || ynh_die "Path not available: ${domain}${path}"
+#=================================================
+# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
+#=================================================
 
-# Download source, check md5, untar, copy it
-sudo wget -q https://release.larsjung.de/h5ai/h5ai-$version.zip -O /tmp/h5ai.zip
+# Register (book) web path
+ynh_webpath_register $app $domain $path_url
 
-# Check md5
-md5_check=($(md5sum /tmp/h5ai.zip))
-if [ $md5_source != $md5_check ]
-then
-        ynh_die "the download is corrupted (md5 different)"
-fi
+# Check final_path availability
+test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
-# unzip and copy it
-sudo unzip -o /tmp/h5ai.zip -d /tmp/
-final_path=/var/www/$path
-sudo mkdir -p $final_path
-sudo cp -a /tmp/_h5ai/. $final_path
+#=================================================
+# STORE SETTINGS FROM MANIFEST
+#=================================================
+
+ynh_app_setting_set $app is_public $is_public
+ynh_app_setting_set $app final_path $final_path
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+# Download, check integrity, uncompress and patch the source from app.src
+# For this app sources are in app subdirectory
+ynh_setup_source "$final_path"
 
 # Set permissions to phpsysinfo directory
-sudo chown -R www-data: $final_path
+sudo chown -R www-data: "$final_path"
 
-# Modify Nginx configuration file and copy it to Nginx conf directory
-sed -i "s@YNH_WWW_PATH@$path@g" ../conf/nginx.conf
-sed -i "s@YNH_WWW_ALIAS@$final_path/@g" ../conf/nginx.conf
-sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/$app.conf
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
 
-# unprotected_uris allows SSO credentials to be passed anyway.
- ynh_app_setting_set "$app" unprotected_uris "/"
+# Create a dedicated nginx config
+ynh_add_nginx_config
 
-# Restart services
-sudo service nginx reload
+#=================================================
+# SETUP SSOWAT
+#=================================================
+
+# Make app public if necessary or protect it
+if [ $is_public -eq 1 ]
+then
+    # unprotected_uris allows SSO credentials to be passed anyway.
+    ynh_app_setting_set "$app" unprotected_uris "/"
+fi
+
+#=================================================
+# RELOAD NGINX
+#=================================================
+
+systemctl reload nginx
