@@ -25,7 +25,13 @@ is_public=$YNH_APP_ARG_IS_PUBLIC
 
 app=$YNH_APP_INSTANCE_NAME
 
-final_path=/var/www/$path_url # so e.g. if path_url is /docs, we put stuff in /var/www/docs
+if [[ "$path_url" != "/" ]]
+then
+     # We use the path url name (e.g. /documents) instead of h5ai for convenience...
+     final_path=/var/www/$path_url
+else
+     final_path=/var/www/$app
+fi
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
