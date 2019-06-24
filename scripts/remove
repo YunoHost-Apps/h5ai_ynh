@@ -11,6 +11,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
+ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get "$app" domain)
@@ -19,13 +20,17 @@ final_path=$(ynh_app_setting_get "$app" final_path)
 #=================================================
 # REMOVE THE MAIN DIR OF THE APP
 #=================================================
+ynh_script_progression --message="Removing app main directory..." --weight=1
 
 # Remove sources
-ynh_secure_remove "$final_path"
+ynh_secure_remove --file="$final_path"
 
 #=================================================
 # REMOVE THE NGINX CONFIGURATION
 #=================================================
+ynh_script_progression --message="Removing nginx web server configuration..." --weight=1
 
 ynh_remove_nginx_config
 systemctl reload nginx
+
+ynh_script_progression --message="Removal of $app completed" --last

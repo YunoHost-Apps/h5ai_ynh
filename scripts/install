@@ -36,6 +36,7 @@ fi
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
+ynh_script_progression --message="Validating installation parameters..." --weight=1
 
 # Register (book) web path
 ynh_webpath_register $app $domain $path_url
@@ -46,6 +47,7 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
+ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set $app is_public $is_public
 ynh_app_setting_set $app final_path $final_path
@@ -53,17 +55,19 @@ ynh_app_setting_set $app final_path $final_path
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Setting up source files..." --weight=1
 
 # Download, check integrity, uncompress and patch the source from app.src
 # For this app sources are in app subdirectory
 ynh_setup_source "$final_path"
 
 # Set permissions to phpsysinfo directory
-sudo chown -R www-data: "$final_path"
+chown -R www-data: "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
+ynh_script_progression --message="Configuring nginx web server..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
@@ -71,6 +75,7 @@ ynh_add_nginx_config
 #=================================================
 # SETUP SSOWAT
 #=================================================
+ynh_script_progression --message="Configuring SSOwat..." --weight=1
 
 # Make app public if necessary or protect it
 if [ $is_public -eq 1 ]
@@ -82,5 +87,8 @@ fi
 #=================================================
 # RELOAD NGINX
 #=================================================
+ynh_script_progression --message="Reloading nginx web server..." --weight=1
 
 systemctl reload nginx
+
+ynh_script_progression --message="Installation of $app completed" --last
