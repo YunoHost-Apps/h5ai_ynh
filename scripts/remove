@@ -12,9 +12,9 @@ source /usr/share/yunohost/helpers
 # LOAD SETTINGS
 #=================================================
 
-readonly app=$YNH_APP_INSTANCE_NAME
-readonly domain=$(ynh_app_setting_get "$app" domain)
-readonly final_path=$(ynh_app_setting_get "$app" final_path)
+app=$YNH_APP_INSTANCE_NAME
+domain=$(ynh_app_setting_get "$app" domain)
+final_path=$(ynh_app_setting_get "$app" final_path)
 
 #=================================================
 # REMOVE THE MAIN DIR OF THE APP
