@@ -8,7 +8,7 @@
         "fr": "Un serveur moderne d'index pour Nginx."
     },
     "url": "https://larsjung.de/h5ai/",
-    "license": "free",
+    "license": "MIT",
     "maintainer": {
         "name": "alexAubin",
         "email": "alex.aubin@mailoo.org"
