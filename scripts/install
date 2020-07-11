@@ -58,7 +58,6 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 ynh_script_progression --message="Setting up source files..." --weight=4
 
 # Download, check integrity, uncompress and patch the source from app.src
-# For this app sources are in app subdirectory
 ynh_setup_source "$final_path"
 
 #=================================================
@@ -67,8 +66,8 @@ ynh_setup_source "$final_path"
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
-# Set permissions to phpsysinfo directory
-chown -R www-data: "$final_path"
+# Restore permissions on app files
+chown -R www-data:www-data "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
