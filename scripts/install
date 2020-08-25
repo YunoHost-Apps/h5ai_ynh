@@ -39,7 +39,7 @@ fi
 ynh_script_progression --message="Validating installation parameters..." --weight=1
 
 # Register (book) web path
-ynh_webpath_register $app $domain $path_url
+ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 
 # Check final_path availability
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
@@ -49,25 +49,30 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 #=================================================
 ynh_script_progression --message="Storing installation settings..." --weight=1
 
-ynh_app_setting_set $app is_public $is_public
-ynh_app_setting_set $app final_path $final_path
+ynh_app_setting_set --app=$app --key=is_public --value=$is_public
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression --message="Setting up source files..." --weight=4
 
 # Download, check integrity, uncompress and patch the source from app.src
-# For this app sources are in app subdirectory
 ynh_setup_source "$final_path"
 
-# Set permissions to phpsysinfo directory
-chown -R www-data: "$final_path"
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Restore permissions on app files
+chown -R www-data:www-data "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring nginx web server..." --weight=1
+ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
@@ -80,15 +85,20 @@ ynh_script_progression --message="Configuring SSOwat..." --weight=1
 # Make app public if necessary or protect it
 if [ $is_public -eq 1 ]
 then
-    # unprotected_uris allows SSO credentials to be passed anyway.
-    ynh_app_setting_set "$app" unprotected_uris "/"
+	# Everyone can access the app.
+	# The "main" permission is automatically created before the install script.
+	ynh_permission_update --permission "main" --add "visitors"
 fi
 
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading nginx web server..." --weight=1
+ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
-systemctl reload nginx
+ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# END OF SCRIPT
+#=================================================
 
 ynh_script_progression --message="Installation of $app completed" --last
