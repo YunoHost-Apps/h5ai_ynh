@@ -28,7 +28,7 @@ app=$YNH_APP_INSTANCE_NAME
 if [[ "$path_url" != "/" ]]
 then
      # We use the path url name (e.g. /documents) instead of h5ai for convenience...
-     final_path=/var/www/$path_url
+     final_path=/var/www$path_url
 else
      final_path=/var/www/$app
 fi
