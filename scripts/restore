@@ -52,11 +52,19 @@ ynh_script_progression --message="Restoring the app main directory..." --weight=
 ynh_restore_file --origin_path="$final_path"
 
 #=================================================
+# RECREATE THE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Recreating the dedicated system user..." --weight=1
+
+# Create the dedicated user (if not existing)
+ynh_system_user_create --username=$app
+
+#=================================================
 # RESTORE USER RIGHTS
 #=================================================
 
 # Restore permissions on app files
-chown -R www-data:www-data "$final_path"
+chown -R $app: "$final_path"
 
 #=================================================
 # GENERIC FINALIZATION

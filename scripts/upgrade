@@ -68,12 +68,6 @@ ynh_clean_setup () {
 ynh_abort_if_errors
 
 #=================================================
-# CHECK THE PATH
-#=================================================
-
-path_url=$(ynh_normalize_url_path --path_url=$path_url)
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -90,8 +84,16 @@ fi
 #=================================================
 ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
 
-# Create a dedicated nginx config
+# Create a dedicated NGINX config
 ynh_add_nginx_config
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
+
+# Create a dedicated user (if not existing)
+ynh_system_user_create --username=$app
 
 #=================================================
 # GENERIC FINALIZATION
@@ -100,7 +102,7 @@ ynh_add_nginx_config
 #=================================================
 
 # Set permissions on app files
-chown -R www-data:www-data "$final_path"
+chown -R $app: "$final_path"
 
 #=================================================
 # RELOAD NGINX

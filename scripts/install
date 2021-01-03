@@ -25,18 +25,18 @@ is_public=$YNH_APP_ARG_IS_PUBLIC
 
 app=$YNH_APP_INSTANCE_NAME
 
-if [[ "$path_url" != "/" ]]
-then
-     # We use the path url name (e.g. /documents) instead of h5ai for convenience...
-     final_path=/var/www/$path_url
-else
-     final_path=/var/www/$app
-fi
-
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 ynh_script_progression --message="Validating installation parameters..." --weight=1
+
+if [[ "$path_url" != "/" ]]
+then
+     # We use the path url name (e.g. /documents) instead of h5ai for convenience...
+     final_path=/var/www$path_url
+else
+     final_path=/var/www/$app
+fi
 
 # Register (book) web path
 ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
@@ -61,21 +61,29 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 ynh_setup_source "$final_path"
 
 #=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Restore permissions on app files
-chown -R www-data:www-data "$final_path"
-
-#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Restore permissions on app files
+chown -R $app: "$final_path"
 
 #=================================================
 # SETUP SSOWAT
