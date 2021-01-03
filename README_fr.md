@@ -1,7 +1,7 @@
 # h5ai pour YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)  
-[![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=h5ai)
+[![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
 *[Read this readme in english.](./README.md)* 
 
