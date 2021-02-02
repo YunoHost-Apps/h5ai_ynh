@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 [h5ai](https://larsjung.de/h5ai/) est un indexeur de fichiers moderne pour les serveurs Web HTTP. Il permet d'afficher et de parcourir des répertoires contenant divers documents avec une interface légère et claire.
 
-**Version incluse :** 0.29.2
+**Version incluse :** 0.30.0
 
 ## Captures d'écran
 
