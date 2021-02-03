@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 [h5ai](https://larsjung.de/h5ai/) is a modern file indexer for HTTP web servers. It allows to display and browse directories containing various documents with a clean and light interface.
 
-**Shipped version:** 0.29.2
+**Shipped version:** 0.30.0
 
 Screenshot :
 

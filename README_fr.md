@@ -1,7 +1,7 @@
 # h5ai pour YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)  
-[![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=h5ai)
+[![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
 *[Read this readme in english.](./README.md)* 
 
@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 [h5ai](https://larsjung.de/h5ai/) est un indexeur de fichiers moderne pour les serveurs Web HTTP. Il permet d'afficher et de parcourir des répertoires contenant divers documents avec une interface légère et claire.
 
-**Version incluse :** 0.29.2
+**Version incluse :** 0.30.0
 
 ## Captures d'écran
 
