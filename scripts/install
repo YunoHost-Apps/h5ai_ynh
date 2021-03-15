@@ -49,7 +49,6 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 #=================================================
 ynh_script_progression --message="Storing installation settings..." --weight=1
 
-ynh_app_setting_set --app=$app --key=is_public --value=$is_public
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 
 #=================================================
@@ -93,8 +92,6 @@ ynh_script_progression --message="Configuring permissions..." --weight=1
 # Make app public if necessary or protect it
 if [ $is_public -eq 1 ]
 then
-	# Everyone can access the app.
-	# The "main" permission is automatically created before the install script.
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
