@@ -32,8 +32,8 @@ The main configuration file is `_h5ai/private/conf/options.json`. You might want
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/h5ai%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/h5ai%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/h5ai/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/h5ai.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/h5ai.svg)](https://ci-apps-arm.yunohost.org/ci/apps/h5ai/)
 
 ## Limitations
 
