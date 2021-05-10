@@ -6,7 +6,7 @@
 *[Read this readme in english.](./README.md)* 
 
 > *Ce package vous permet d'installer h5ai rapidement et simplement sur un serveur YunoHost.  
-Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
+Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
 [h5ai](https://larsjung.de/h5ai/) est un indexeur de fichiers moderne pour les serveurs Web HTTP. Il permet d'afficher et de parcourir des répertoires contenant divers documents avec une interface légère et claire.
@@ -53,7 +53,6 @@ Le fichier de configuration principal est `_h5ai / private / conf / options.json
 ---
 
 ## Informations pour les développeurs
-
 
 Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing).
 
