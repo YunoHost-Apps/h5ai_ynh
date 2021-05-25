@@ -8,6 +8,12 @@
     },
     "version": "0.30.0~ynh1",
     "url": "https://larsjung.de/h5ai/",
+    "upstream": {
+        "license": "MIT",
+        "website": "https://larsjung.de/h5ai/",
+        "admindoc": "https://larsjung.de/h5ai/",
+        "code": "https://github.com/lrsjng/h5ai"
+    },
     "license": "MIT",
     "maintainer": {
         "name": "alexAubin",
