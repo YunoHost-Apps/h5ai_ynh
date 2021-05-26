@@ -45,19 +45,26 @@ ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 #=================================================
-# STORE SETTINGS FROM MANIFEST
+# CREATE DEDICATED USER
 #=================================================
-ynh_script_progression --message="Storing installation settings..." --weight=1
+ynh_script_progression --message="Configuring system user..." --weight=1
 
-ynh_app_setting_set --app=$app --key=final_path --value=$final_path
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=4
 
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path"
+
+# Restore permissions on app files
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -66,25 +73,6 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-ynh_system_user_create --username=$app
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Restore permissions on app files
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
 
 #=================================================
 # SETUP SSOWAT
