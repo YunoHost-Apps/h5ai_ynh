@@ -1,21 +1,27 @@
 # h5ai pour YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)  
+[![Niveau d'intégration](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)  
 [![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
-*[Read this readme in english.](./README.md)* 
+*[Read this readme in english.](./README.md)*
+*[Lire ce readme en français.](./README_fr.md)*
 
-> *Ce package vous permet d'installer h5ai rapidement et simplement sur un serveur YunoHost.  
-Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
+> *Ce package vous permet d'installer h5ai rapidement et simplement sur un serveur YunoHost.
+Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
 
 ## Vue d'ensemble
-[h5ai](https://larsjung.de/h5ai/) est un indexeur de fichiers moderne pour les serveurs Web HTTP. Il permet d'afficher et de parcourir des répertoires contenant divers documents avec une interface légère et claire.
 
-**Version incluse :** 0.30.0
+Serveur moderne d'index pour NGINX.
+
+**Version incluse :** 0.30.0~ynh2
+
+
 
 ## Captures d'écran
 
-![](./doc/screenshot.jpg)
+![](./doc/screenshots/screenshot.jpg)
+
+## Avertissements / informations importantes
 
 ## Configuration
 
@@ -23,37 +29,15 @@ Après avoir installé l'application, vous pouvez ajouter des documents dans `/v
 h5ai ne permet pas de modifier ou de télécharger de nouveaux documents directement à partir du navigateur Web. Vous pouvez imaginer coupler le dossier `/var/www/documents` à Nextcloud ou un FTP pour permettre à certains utilisateurs de télécharger du contenu et d'utiliser h5ai comme interface publique en lecture seule.  
 Le fichier de configuration principal est `_h5ai / private / conf / options.json`. Vous souhaiterez peut-être modifier certains des paramètres documentés. Mais il y a d'autres fichiers dans `_h5ai / private / conf` que vous pourriez consulter.
 
-## Documentation
+## Documentations et ressources
 
- * Documentation officielle : https://larsjung.de/h5ai/
- * Documentation YunoHost : Si une documentation spécifique est nécessaire, n'hésitez pas à contribuer.
-
-## Caractéristiques spécifiques YunoHost
-
-#### Architectures supportées
-
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/h5ai%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/h5ai%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/h5ai/)
-
-## Limitations
-
-* Limitations connues.
-
-## Informations additionnelles
-
-* Autres informations que vous souhaitez ajouter sur cette application.
-
-## Liens
-
- * Signaler un bug : https://github.com/YunoHost-Apps/h5ai_ynh/issues
- * Site de l'application : https://larsjung.de/h5ai/
- * Dépôt de l'application principale : https://github.com/lrsjng/h5ai
- * Site web YunoHost : https://yunohost.org/
-
----
+* Site officiel de l'app : https://larsjung.de/h5ai/
+* Documentation officielle de l'admin : https://larsjung.de/h5ai/
+* Dépôt de code officiel de l'app : https://github.com/lrsjng/h5ai
+* Documentation YunoHost pour cette app : https://yunohost.org/app_h5ai
+* Signaler un bug : https://github.com/YunoHost-Apps/h5ai_ynh/issues
 
 ## Informations pour les développeurs
-
 
 Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing).
 
@@ -63,3 +47,5 @@ sudo yunohost app install https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing
 ou
 sudo yunohost app upgrade h5ai -u https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing --debug
 ```
+
+**Plus d'infos sur le packaging d'applications :** https://yunohost.org/packaging_apps
