@@ -20,7 +20,7 @@
         "email": "alex.aubin@mailoo.org"
     },
     "requirements": {
-        "yunohost": ">= 4.1.7"
+        "yunohost": ">= 4.2.0"
     },
     "multi_instance": false,
     "services": [
