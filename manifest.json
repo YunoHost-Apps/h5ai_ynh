@@ -3,8 +3,8 @@
     "id": "h5ai",
     "packaging_format": 1,
     "description": {
-        "en": "Modern HTTP web server index for NGINX.",
-        "fr": "Serveur moderne d'index pour NGINX."
+        "en": "Modern HTTP web server index for NGINX",
+        "fr": "Serveur moderne d'index pour NGINX"
     },
     "version": "0.30.0~ynh2",
     "url": "https://larsjung.de/h5ai/",
