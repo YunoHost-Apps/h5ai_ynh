@@ -15,7 +15,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Modern HTTP web server index for NGINX.
+Modern HTTP web server index for NGINX
 
 **Shipped version:** 0.30.0~ynh2
 
