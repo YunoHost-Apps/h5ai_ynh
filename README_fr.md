@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Serveur moderne d'index pour NGINX
 
-**Version incluse :** 0.30.0~ynh2
+**Version incluse :** 0.30.0~ynh3
 
 
 

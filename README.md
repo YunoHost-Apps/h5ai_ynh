@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Modern HTTP web server index for NGINX
 
-**Shipped version:** 0.30.0~ynh2
+**Shipped version:** 0.30.0~ynh3
 
 
 
