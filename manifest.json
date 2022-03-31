@@ -12,7 +12,8 @@
         "license": "MIT",
         "website": "https://larsjung.de/h5ai/",
         "admindoc": "https://larsjung.de/h5ai/",
-        "code": "https://github.com/lrsjng/h5ai"
+        "code": "https://github.com/lrsjng/h5ai",
+        "demo": "https://larsjung.de/h5ai/demo/"
     },
     "license": "MIT",
     "maintainer": {
@@ -22,7 +23,7 @@
     "requirements": {
         "yunohost": ">= 4.3.0"
     },
-    "multi_instance": false,
+    "multi_instance": true,
     "services": [
         "nginx",
         "php7.3-fpm"
