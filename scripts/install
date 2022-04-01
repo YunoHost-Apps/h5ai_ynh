@@ -116,12 +116,12 @@ ynh_add_fpm_config
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --time --weight=1
+#ynh_script_progression --message="Adding a configuration file..." --time --weight=1
 
-ynh_add_config --template="some_config_file" --destination="$final_path/some_config_file"
+#ynh_add_config --template="some_config_file" --destination="$final_path/some_config_file"
 
-chmod 400 "$final_path/some_config_file"
-chown $app:$app "$final_path/some_config_file"
+#chmod 400 "$final_path/some_config_file"
+#chown $app:$app "$final_path/some_config_file"
 
 #=================================================
 # GENERIC FINALIZATION
