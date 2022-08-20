@@ -4,10 +4,10 @@
 # COMMON VARIABLES
 #=================================================
 
-phpversion="7.3"
+YNH_PHP_VERSION=7.4
 
 # dependencies used by the app
-pkg_dependencies="php$phpversion-fpm ffmpeg imagemagick"
+pkg_dependencies="php$YNH_PHP_VERSION-fpm ffmpeg imagemagick"
 
 #=================================================
 # PERSONAL HELPERS
