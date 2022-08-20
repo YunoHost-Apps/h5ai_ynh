@@ -33,6 +33,12 @@ ynh_script_progression --message="Removing app main directory..." --weight=3
 # Remove the app directory securely
 ynh_secure_remove --file="$final_path/_h5ai"
 
+# Remove the data directory if --purge option is used
+if [ "${YNH_APP_PURGE:-0}" -eq 1 ]
+then
+    ynh_secure_remove --file="$final_path"
+fi
+
 #=================================================
 # REMOVE NGINX CONFIGURATION
 #=================================================
