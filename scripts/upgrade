@@ -48,35 +48,6 @@ ynh_clean_setup () {
 ynh_abort_if_errors
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
-# ...
-#=================================================
-
-#=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
-
-#
-# N.B. : the followings setting migrations snippets are provided as *EXAMPLES*
-# of what you may want to do in some cases (e.g. a setting was not defined on
-# some legacy installs and you therefore want to initiaze stuff during upgrade)
-#
-
-# If db_name doesn't exist, create it
-#if [ -z "$db_name" ]; then
-#	db_name=$(ynh_sanitize_dbid --db_name=$app)
-#	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-#fi
-
-# If final_path doesn't exist, create it
-#if [ -z "$final_path" ]; then
-#	final_path=/var/www/$app
-#	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-#fi
-
-#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
@@ -122,28 +93,6 @@ ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config
-
-#=================================================
-# SPECIFIC UPGRADE
-#=================================================
-# ...
-#=================================================
-
-#=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-#ynh_script_progression --message="Updating a configuration file..." --weight=1
-
-#ynh_add_config --template="some_config_file" --destination="$final_path/some_config_file"
-
-#chmod 400 "$final_path/some_config_file"
-#chown $app:$app "$final_path/some_config_file"
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# ...
-#=================================================
 
 #=================================================
 # RELOAD NGINX

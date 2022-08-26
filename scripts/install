@@ -55,22 +55,9 @@ ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
-# STANDARD MODIFICATIONS
-#=================================================
-# ...
-#=================================================
-
-#=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing dependencies..." --weight=1
-
-### Those deb packages will be installed as dependencies of this package.
-### If you're not using this helper:
-###		- Remove the section "REMOVE DEPENDENCIES" in the remove script
-###		- Remove the variable "pkg_dependencies" in _common.sh
-###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
-###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
 
 ynh_install_app_dependencies $pkg_dependencies
 
@@ -110,28 +97,6 @@ ynh_script_progression --message="Configuring PHP-FPM..." --weight=1
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config
-
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-# ...
-#=================================================
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-#ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-#ynh_add_config --template="some_config_file" --destination="$final_path/some_config_file"
-
-#chmod 400 "$final_path/some_config_file"
-#chown $app:$app "$final_path/some_config_file"
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# ...
-#=================================================
 
 #=================================================
 # SETUP SSOWAT

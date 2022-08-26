@@ -86,11 +86,6 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=1
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
-# RESTORE VARIOUS FILES
-#=================================================
-#ynh_script_progression --message="Restoring various files..." --weight=1
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX AND PHP-FPM
