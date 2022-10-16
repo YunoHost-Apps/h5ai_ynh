@@ -15,14 +15,13 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-h5ai is a modern file indexer for HTTP web servers with focus on your files. Directories are displayed in a appealing way and browsing them is enhanced by different views, a breadcrumb and a tree overview.
+h5ai est un indexeur de fichiers moderne pour les serveurs web HTTP avec un focus sur vos fichiers. Les répertoires sont affichés de manière attrayante et leur navigation est améliorée par différentes vues, un fil d'Ariane et une arborescence.
 
-### Features
+### Caractéristiques
 
-There are lots of optional extensions and configuration options to customize the web appearance of your directory listings. All markup is valid HTML5 spiced up with CSS3 and finest JavaScript to build a fresh but minimal user interface and a user experience that focuses on your files.
+Il y a beaucoup d'extensions optionnelles et d'options de configuration pour personnaliser l'apparence web de vos listes de répertoire. Tout le balisage est du HTML5 valide, agrémenté de CSS3 et du JavaScript le plus fin pour construire
 
-Some of the optional features are: file sorting, different view modes, localization, a breadcrumb, a tree view, custom headers and footers, file filter and search, folder sizes, auto refresh, packaged download, QR codes, thumbnails, file previews
-
+Parmi les fonctionnalités optionnelles, citons : le tri des fichiers, différents modes d'affichage, la localisation, le fil d'Ariane, l'arborescence, les en-têtes et pieds de page personnalisés, le filtrage et la recherche de fichiers, la taille des dossiers, le rafraîchissement automatique, l'emballage...
 
 **Version incluse :** 0.30.0~ynh3
 
