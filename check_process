@@ -11,11 +11,11 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=73f74039fb63adc555222d73ded6b43a64d41456
+		upgrade=1	from_commit=af190a49ec43b470a38b21d81887a1b457b333fa
 		backup_restore=1
 		multi_instance=1
 		change_url=1
 ;;; Upgrade options
-	; commit=73f74039fb63adc555222d73ded6b43a64d41456
-		name=Update check_process, 24 Jun 2019
+	; commit=af190a49ec43b470a38b21d81887a1b457b333fa
+		name=Merge pull request #11
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
