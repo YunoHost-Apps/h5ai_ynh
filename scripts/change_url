@@ -24,7 +24,7 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
+ynh_script_progression --message="Loading settings..." --weight=1
 
 # Needed for helper "ynh_add_nginx_config"
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
@@ -91,6 +91,8 @@ then
 	ynh_store_file_checksum --file="/etc/nginx/conf.d/$new_domain.d/$app.conf"
 fi
 
+#=================================================
+# GENERIC FINALISATION
 #=================================================
 # RELOAD NGINX
 #=================================================

@@ -12,13 +12,15 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
+ynh_script_progression --message="Loading settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 
+#=================================================
+# STANDARD REMOVE
 #=================================================
 # REMOVE APP MAIN DIR
 #=================================================
@@ -30,7 +32,7 @@ ynh_secure_remove --file="$final_path/_h5ai"
 # Remove the data directory if --purge option is used
 if [ "${YNH_APP_PURGE:-0}" -eq 1 ]
 then
-    ynh_secure_remove --file="$final_path"
+	ynh_secure_remove --file="$final_path"
 fi
 
 #=================================================

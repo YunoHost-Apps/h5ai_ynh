@@ -11,9 +11,9 @@
     "upstream": {
         "license": "MIT",
         "website": "https://larsjung.de/h5ai/",
+        "demo": "https://larsjung.de/h5ai/demo/",
         "admindoc": "https://larsjung.de/h5ai/",
-        "code": "https://github.com/lrsjng/h5ai",
-        "demo": "https://larsjung.de/h5ai/demo/"
+        "code": "https://github.com/lrsjng/h5ai"
     },
     "license": "MIT",
     "maintainer": {

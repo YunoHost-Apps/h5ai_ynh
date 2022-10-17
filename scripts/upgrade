@@ -12,7 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
+ynh_script_progression --message="Loading settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 if [[ "$path_url" != "/" ]]
@@ -30,6 +30,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 #=================================================
 # CHECK VERSION
 #=================================================
+ynh_script_progression --message="Checking version..." --weight=1
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -46,6 +47,13 @@ ynh_clean_setup () {
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
+
+#=================================================
+# STANDARD UPGRADE STEPS
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
 #=================================================
 # CREATE DEDICATED USER
@@ -94,6 +102,8 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
+#=================================================
+# GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX
 #=================================================

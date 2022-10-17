@@ -11,6 +11,8 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
+		upgrade=1	from_commit=73f74039fb63adc555222d73ded6b43a64d41456
+		# 0.30.0~ynh3
 		upgrade=1	from_commit=af190a49ec43b470a38b21d81887a1b457b333fa
 		backup_restore=1
 		multi_instance=1
