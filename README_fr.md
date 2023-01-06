@@ -24,7 +24,7 @@ Il y a beaucoup d'extensions optionnelles et d'options de configuration pour per
 Parmi les fonctionnalités optionnelles, citons : le tri des fichiers, différents modes d'affichage, la localisation, le fil d'Ariane, l'arborescence, les en-têtes et pieds de page personnalisés, le filtrage et la recherche de fichiers, la taille des dossiers, le rafraîchissement automatique, l'emballage...
 
 
-**Version incluse :** 0.30.0~ynh3
+**Version incluse :** 0.30.0~ynh4
 
 **Démo :** https://larsjung.de/h5ai/demo/
 
