@@ -6,7 +6,7 @@
         "en": "Modern HTTP web server index for NGINX",
         "fr": "Serveur moderne d'index pour NGINX"
     },
-    "version": "0.30.0~ynh3",
+    "version": "0.30.0~ynh4",
     "url": "https://larsjung.de/h5ai/",
     "upstream": {
         "license": "MIT",
