@@ -25,7 +25,7 @@ There are lots of optional extensions and configuration options to customize the
 Some of the optional features are: file sorting, different view modes, localization, a breadcrumb, a tree view, custom headers and footers, file filter and search, folder sizes, auto refresh, packaged download, QR codes, thumbnails, file previews
 
 
-**Shipped version:** 0.30.0~ynh4
+**Shipped version:** 0.30.0~ynh5
 
 **Demo:** https://larsjung.de/h5ai/demo/
 
