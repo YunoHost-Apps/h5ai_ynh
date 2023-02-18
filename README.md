@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # h5ai for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Working status](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Working status](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
+
 [![Install h5ai with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -32,14 +33,6 @@ Some of the optional features are: file sorting, different view modes, localizat
 
 ![Screenshot of h5ai](./doc/screenshots/screenshot.jpg)
 ![Screenshot of h5ai](./doc/screenshots/h5ai-1024x540.png)
-
-## Disclaimers / important information
-
-## Configuration
-
-After installing the application, you can add documents in `/var/www/documents` (or the corresponding path you choosed).  
-h5ai doesn't allow to edit or upload new documents directly from the web browser. But you can imagine coupling the folder `/var/www/documents` to Nextcloud or some sort of FTP to allow some users to upload content, and use h5ai as a public read-only interface.  
-The main configuration file is `_h5ai/private/conf/options.json`. You might want to change some of the documented settings. But there are some more files in `_h5ai/private/conf` you might have a look at.
 
 ## Documentation and resources
 
