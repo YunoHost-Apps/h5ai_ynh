@@ -32,7 +32,6 @@ Parmi les fonctionnalités optionnelles, citons : le tri des fichiers, différen
 ## Captures d’écran
 
 ![Capture d’écran de h5ai](./doc/screenshots/screenshot.jpg)
-![Capture d’écran de h5ai](./doc/screenshots/h5ai-1024x540.png)
 
 ## Documentations et ressources
 

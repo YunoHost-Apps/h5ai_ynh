@@ -32,7 +32,6 @@ Some of the optional features are: file sorting, different view modes, localizat
 ## Screenshots
 
 ![Screenshot of h5ai](./doc/screenshots/screenshot.jpg)
-![Screenshot of h5ai](./doc/screenshots/h5ai-1024x540.png)
 
 ## Documentation and resources
 
