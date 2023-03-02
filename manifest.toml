@@ -1,0 +1,50 @@
+packaging_format = 2
+
+id = "h5ai"
+name = "h5ai"
+description.en = "Modern HTTP web server index for NGINX"
+description.fr = "Serveur moderne d'index pour NGINX"
+
+version = "0.30.0~ynh5"
+
+maintainers = ["alexAubin"]
+
+[upstream]
+license = "MIT"
+website = "https://larsjung.de/h5ai/"
+demo = "https://larsjung.de/h5ai/demo/"
+admindoc = "https://larsjung.de/h5ai/"
+code = "https://github.com/lrsjng/h5ai"
+
+[integration]
+yunohost = ">= 11.1.12"
+architectures = "all"
+multi_instance = true
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/documents"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "php8.0-fpm ffmpeg imagemagick"
