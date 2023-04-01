@@ -17,7 +17,7 @@ admindoc = "https://larsjung.de/h5ai/"
 code = "https://github.com/lrsjng/h5ai"
 
 [integration]
-yunohost = ">= 11.1.12"
+yunohost = ">= 11.1.15"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -39,6 +39,14 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://release.larsjung.de/h5ai/h5ai-0.30.0.zip"
+        sha256 = "fe138305a61d72094beb8c507dab728020158e4b00dae695a60b9803babb3e30"
+        in_subdir = false
+
     [resources.system_user]
 
     [resources.install_dir]
