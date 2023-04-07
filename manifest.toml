@@ -5,7 +5,7 @@ name = "h5ai"
 description.en = "Modern HTTP web server index for NGINX"
 description.fr = "Serveur moderne d'index pour NGINX"
 
-version = "0.30.0~ynh5"
+version = "0.30.0~ynh6"
 
 maintainers = ["alexAubin"]
 
@@ -17,7 +17,7 @@ admindoc = "https://larsjung.de/h5ai/"
 code = "https://github.com/lrsjng/h5ai"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.1.17"
 architectures = "all"
 multi_instance = true
 ldap = false
