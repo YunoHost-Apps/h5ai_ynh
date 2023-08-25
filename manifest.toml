@@ -5,7 +5,7 @@ name = "h5ai"
 description.en = "Modern HTTP web server index for NGINX"
 description.fr = "Serveur moderne d'index pour NGINX"
 
-version = "0.30.0~ynh6"
+version = "0.30.0~ynh7"
 
 maintainers = ["alexAubin"]
 
