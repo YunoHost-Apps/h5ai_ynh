@@ -55,4 +55,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "php8.2-fpm ffmpeg imagemagick"
+    packages = "php8.2-fpm, ffmpeg, imagemagick"
