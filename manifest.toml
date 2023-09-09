@@ -48,6 +48,7 @@ ram.runtime = "50M"
         in_subdir = false
 
     [resources.system_user]
+    allow_sftp = true
 
     [resources.install_dir]
 
