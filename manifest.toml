@@ -5,7 +5,7 @@ name = "h5ai"
 description.en = "Modern HTTP web server index for NGINX"
 description.fr = "Serveur moderne d'index pour NGINX"
 
-version = "0.30.0~ynh7"
+version = "0.30.0~ynh8"
 
 maintainers = ["alexAubin"]
 
@@ -48,6 +48,7 @@ ram.runtime = "50M"
         in_subdir = false
 
     [resources.system_user]
+    allow_sftp = true
 
     [resources.install_dir]
 
@@ -55,4 +56,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "php8.2-fpm ffmpeg imagemagick"
+    packages = "php8.2-fpm, php8.2-gd, ffmpeg, imagemagick"
