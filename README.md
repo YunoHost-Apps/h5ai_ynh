@@ -36,7 +36,7 @@ Some of the optional features are: file sorting, different view modes, localizat
 * Official app website: <https://larsjung.de/h5ai/>
 * Official admin documentation: <https://larsjung.de/h5ai/>
 * Upstream app code repository: <https://github.com/lrsjng/h5ai>
-* YunoHost documentation for this app: <https://yunohost.org/app_h5ai>
+* YunoHost Store: <https://apps.yunohost.org/app/h5ai>
 * Report a bug: <https://github.com/YunoHost-Apps/h5ai_ynh/issues>
 
 ## Developer info
