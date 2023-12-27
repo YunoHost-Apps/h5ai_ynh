@@ -11,19 +11,21 @@ upgrade_type=$(ynh_check_app_version_changed)
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..." --weight=4
+	ynh_script_progression --message="Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir"
+	ynh_setup_source --dest_dir="$install_dir" --keep="_h5ai/private/conf/options.json"
 fi
 
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chmod o-rwx "$install_dir"
+chown $app:www-data "$install_dir"
+chown -R $app:www-data "$install_dir/_h5ai"
+chown 700 "$install_dir/_h5ai/private"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=4
+ynh_script_progression --message="Upgrading system configurations related to $app..."
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config
