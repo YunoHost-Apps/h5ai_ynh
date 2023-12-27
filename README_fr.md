@@ -36,7 +36,7 @@ Parmi les fonctionnalités optionnelles, citons : le tri des fichiers, différen
 * Site officiel de l’app : <https://larsjung.de/h5ai/>
 * Documentation officielle de l’admin : <https://larsjung.de/h5ai/>
 * Dépôt de code officiel de l’app : <https://github.com/lrsjng/h5ai>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_h5ai>
+* YunoHost Store: <https://apps.yunohost.org/app/h5ai>
 * Signaler un bug : <https://github.com/YunoHost-Apps/h5ai_ynh/issues>
 
 ## Informations pour les développeurs
