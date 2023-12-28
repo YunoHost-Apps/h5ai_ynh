@@ -20,7 +20,7 @@ fi
 chmod o-rwx "$install_dir"
 chown $app:www-data "$install_dir"
 chown -R $app:www-data "$install_dir/_h5ai"
-chown 700 "$install_dir/_h5ai/private"
+chown 700 "$install_dir/_h5ai/private/conf"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
