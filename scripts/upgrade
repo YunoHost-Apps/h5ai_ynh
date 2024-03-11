@@ -14,7 +14,7 @@ then
 	ynh_script_progression --message="Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="_h5ai/private/conf/options.json"
+	ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="_h5ai/private/conf/options.json"
 fi
 
 chmod o-rwx "$install_dir"
