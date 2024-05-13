@@ -26,6 +26,7 @@ ynh_script_progression --message="Setting up source files..."
 tmpdir=$(mktemp -d)
 ynh_setup_source --dest_dir="$tmpdir"
 pushd $tmpdir
+    ls -l
     npm ci
     npm run build
     mv build/_h5ai $install_dir/_h5ai
