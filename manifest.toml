@@ -45,7 +45,6 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://github.com/lrsjng/h5ai/archive/refs/tags/v0.30.0.tar.gz"
         sha256 = "f1638557ec79e6fe6bd9303b1e9d8d0180a620dbf4811b6c194befa24769800c"
-        in_subdir = false
 
     [resources.system_user]
     allow_sftp = true
