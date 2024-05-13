@@ -23,7 +23,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
 Some of the optional features are: file sorting, different view modes, localization, a breadcrumb, a tree view, custom headers and footers, file filter and search, folder sizes, auto refresh, packaged download, QR codes, thumbnails, file previews
 
 
-**分发版本：** 0.30.0~ynh10
+**分发版本：** 0.30.0~ynh11
 
 **演示：** <https://larsjung.de/h5ai/demo/>
 
