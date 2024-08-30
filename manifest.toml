@@ -17,7 +17,8 @@ admindoc = "https://larsjung.de/h5ai/"
 code = "https://github.com/lrsjng/h5ai"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.18"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -50,6 +51,7 @@ ram.runtime = "50M"
     allow_sftp = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
