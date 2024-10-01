@@ -18,7 +18,9 @@ ynh_nodejs_install
 ynh_script_progression "Setting up source files..."
 
 tmpdir=$(mktemp -d)
+
 ynh_setup_source --dest_dir="$tmpdir"
+
 pushd $tmpdir
     cp $install_dir/_h5ai/private/conf/options.json ./options.json.bkp
     npm ci
@@ -27,6 +29,7 @@ pushd $tmpdir
     mv build/_h5ai $install_dir/_h5ai
     cp ./options.json.bkp $install_dir/_h5ai/private/conf/options.json
 popd
+
 ynh_safe_rm $tmpdir
 
 chown -R $app:www-data "$install_dir/_h5ai"
