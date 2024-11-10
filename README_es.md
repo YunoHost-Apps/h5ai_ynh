@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # h5ai para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/h5ai.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
 
 [![Instalar h5ai con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
@@ -41,7 +41,7 @@ Some of the optional features are: file sorting, different view modes, localizat
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/h5ai_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

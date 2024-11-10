@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # h5ai pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/h5ai.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
 
 [![Installer h5ai avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
