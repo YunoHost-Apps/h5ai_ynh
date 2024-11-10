@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # h5ai YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/h5ai.svg)](https://ci-apps.yunohost.org/ci/apps/h5ai/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
 
 [![Instalatu h5ai YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
