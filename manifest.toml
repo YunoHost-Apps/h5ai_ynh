@@ -5,7 +5,7 @@ name = "h5ai"
 description.en = "Modern HTTP web server index for NGINX"
 description.fr = "Serveur moderne d'index pour NGINX"
 
-version = "0.30.0~ynh11"
+version = "0.30.0~ynh12"
 
 maintainers = ["alexAubin"]
 
@@ -17,7 +17,7 @@ admindoc = "https://larsjung.de/h5ai/"
 code = "https://github.com/lrsjng/h5ai"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -57,4 +57,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "php8.2-fpm, php8.2-gd, ffmpeg, imagemagick"
+    packages = "php8.3-fpm, php8.3-gd, ffmpeg, imagemagick"
