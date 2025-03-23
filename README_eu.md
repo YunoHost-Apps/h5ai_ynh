@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # h5ai YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/h5ai.svg)](https://dash.yunohost.org/appci/app/h5ai) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/h5ai.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/h5ai)](https://ci-apps.yunohost.org/ci/apps/h5ai/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/h5ai)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/h5ai)
 
 [![Instalatu h5ai YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=h5ai)
 
@@ -23,7 +25,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
 Some of the optional features are: file sorting, different view modes, localization, a breadcrumb, a tree view, custom headers and footers, file filter and search, folder sizes, auto refresh, packaged download, QR codes, thumbnails, file previews
 
 
-**Paketatutako bertsioa:** 0.30.0~ynh11
+**Paketatutako bertsioa:** 0.30.0~ynh12
 
 **Demoa:** <https://larsjung.de/h5ai/demo/>
 

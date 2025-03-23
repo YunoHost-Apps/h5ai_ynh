@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "h5ai"
@@ -5,7 +7,7 @@ name = "h5ai"
 description.en = "Modern HTTP web server index for NGINX"
 description.fr = "Serveur moderne d'index pour NGINX"
 
-version = "0.30.0~ynh11"
+version = "0.30.0~ynh12"
 
 maintainers = ["alexAubin"]
 
@@ -42,9 +44,10 @@ ram.runtime = "50M"
 
     [resources.sources]
 
-        [resources.sources.main]
-        url = "https://github.com/lrsjng/h5ai/archive/refs/tags/v0.30.0.tar.gz"
-        sha256 = "f1638557ec79e6fe6bd9303b1e9d8d0180a620dbf4811b6c194befa24769800c"
+    [resources.sources.main]
+    url = "https://github.com/lrsjng/h5ai/archive/refs/tags/v0.30.0.tar.gz"
+    sha256 = "f1638557ec79e6fe6bd9303b1e9d8d0180a620dbf4811b6c194befa24769800c"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
     allow_sftp = true
