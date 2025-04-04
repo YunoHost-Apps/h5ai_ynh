@@ -3,49 +3,49 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+ynh_app_setting_set_default --key=php_upload_max_filesize --value=500M
+
 #=================================================
 # INSTALL NODEJS
 #=================================================
-ynh_script_progression --message="Install nodejs..."
+ynh_script_progression "Install nodejs..."
 
-ynh_install_nodejs --nodejs_version=$nodejs_version
-ynh_use_nodejs
+ynh_nodejs_install
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..."
-	
+ynh_script_progression "Setting up source files..."
+
 tmpdir=$(mktemp -d)
+
 ynh_setup_source --dest_dir="$tmpdir"
+
 pushd $tmpdir
     cp $install_dir/_h5ai/private/conf/options.json ./options.json.bkp
     npm ci
     npm run build
-    ynh_secure_remove $install_dir/_h5ai
+    ynh_safe_rm $install_dir/_h5ai
     mv build/_h5ai $install_dir/_h5ai
     cp ./options.json.bkp $install_dir/_h5ai/private/conf/options.json
 popd
-ynh_secure_remove $tmpdir
 
-chmod o-rwx "$install_dir"
-chown $app:www-data "$install_dir"
+ynh_safe_rm $tmpdir
+
 chown -R $app:www-data "$install_dir/_h5ai"
 chmod 700 "$install_dir/_h5ai/private/conf"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..."
+ynh_script_progression "Upgrading system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
